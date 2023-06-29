@@ -167,6 +167,48 @@ void Test_erase()
 	assert(*(vec.end() - 1) == 2);
 }
 
+void TestOperatorEqual()
+{
+	Vector<int> vec;
+
+	vec.push_back(12);
+	vec.push_back(10);
+	vec.push_back(8);
+	vec.push_back(6);
+	vec.push_back(4);
+	vec.push_back(2);
+	vec.push_back(0);
+	
+	Vector<int> vec1 = vec;
+	assert(vec.size() == vec1.size());
+	assert(vec.begin() != vec1.begin());
+	for (int i = 0; i < vec.size(); i++)
+	{
+		assert(vec[i] == vec1[i]);
+	}
+}
+
+void TestCopyConstructor()
+{
+	Vector<int> vec;
+
+	vec.push_back(12);
+	vec.push_back(10);
+	vec.push_back(8);
+	vec.push_back(6);
+	vec.push_back(4);
+	vec.push_back(2);
+	vec.push_back(0);
+
+	Vector<int> vec1(vec);
+	assert(vec.size() == vec1.size());
+	assert(vec.begin() != vec1.begin());
+	for (int i = 0; i < vec.size(); i++)
+	{
+		assert(vec[i] == vec1[i]);
+	}
+}
+
 void Test()
 {
 	TestPushBack();
@@ -178,6 +220,8 @@ void Test()
 	Test_end();
 	TestAccessToElementVector();
 	Test_erase();
+	TestOperatorEqual();
+	TestCopyConstructor();
 }
 
 
@@ -202,19 +246,6 @@ int main() {
 	SetConsoleCP(1251); 
 	Test();
 	
-
-	Vector<int> vec;
-	
-	vec.push_back(12);
-	vec.push_back(10);
-	vec.push_back(8);
-	vec.push_back(6);
-	vec.push_back(4);
-	vec.push_back(2);
-	vec.push_back(0);
-
-	printVector(vec);
-	
-	
+		
 	return 0;
 }

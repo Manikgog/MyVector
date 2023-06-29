@@ -107,7 +107,10 @@ public:
 		if (this != &v)
 		{
 			if (this->_array != nullptr)
+			{
+				delete[] this->_array;
 				this->_array = nullptr;
+			}
 			this->_size = v._size;
 			for (size_t i = 0; i < this->_size; i++)
 			{
