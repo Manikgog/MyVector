@@ -128,6 +128,45 @@ void Test_end()
 	assert(vec.begin() + vec.size() == vec.end());
 }
 
+void TestAccessToElementVector()
+{
+	Vector<int> vec;
+	vec.push_back(12);
+	vec.push_back(10);
+	vec.push_back(8);
+	vec.push_back(6);
+	vec.push_back(4);
+	vec.push_back(2);
+	vec.push_back(0);
+	for (int i = 0; i < vec.size(); i++)
+	{
+		vec[i] = i + 20;
+	}
+	for (int i = 0; i < vec.size(); i++)
+	{
+		assert(vec[i] == i + 20);
+	}
+}
+
+void Test_erase()
+{
+	Vector<int> vec;
+	vec.push_back(12);
+	vec.push_back(10);
+	vec.push_back(8);
+	vec.push_back(6);
+	vec.push_back(4);
+	vec.push_back(2);
+	vec.push_back(0);
+	assert(*(vec.begin()) == 12);
+	vec.erase(0);
+	assert(*(vec.begin()) == 10);
+	vec.erase(2);
+	assert(*(vec.begin() + 2) == 4);
+	vec.erase(vec.size() - 1);
+	assert(*(vec.end() - 1) == 2);
+}
+
 void Test()
 {
 	TestPushBack();
@@ -137,6 +176,8 @@ void Test()
 	TestAt();
 	Test_rbegin();
 	Test_end();
+	TestAccessToElementVector();
+	Test_erase();
 }
 
 
@@ -172,20 +213,8 @@ int main() {
 	vec.push_back(2);
 	vec.push_back(0);
 
-	//printVector(vec);
-	std::cout << "vec.begin() + 2 = " << *(vec.begin() + 2) << std::endl;
-	std::cout << "vec.end() - 1 = " << *(vec.end() - 1) << std::endl;
-	//vec.pop_back();
-
-	vec.insert(7, 3);
-
-	for (auto it = vec.rbegin(); it != vec.rend(); --it)
-	{
-		std::cout << *it << ' ';
-	}
-	std::cout << std::endl;
-
-	std::cout << "vec.front() = " << vec.front() << std::endl;
+	printVector(vec);
+	
 	
 	return 0;
 }

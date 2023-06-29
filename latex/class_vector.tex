@@ -1,0 +1,95 @@
+\doxysection{Vector\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_vector}{}\label{class_vector}\index{Vector$<$ T $>$@{Vector$<$ T $>$}}
+
+
+Шаблонный класс динамической коллекции на основе динамического массива.  
+
+
+
+
+{\ttfamily \#include $<$Vector.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_vector_1_1_iterator}{Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_vector_a83ed77764ab028ba5f5177a5926effa7}\label{class_vector_a83ed77764ab028ba5f5177a5926effa7} 
+{\bfseries Vector} (const \mbox{\hyperlink{class_vector}{Vector}} \&v)
+\item 
+\Hypertarget{class_vector_a1cdaf7cb37b885507a2a282c365ea7f8}\label{class_vector_a1cdaf7cb37b885507a2a282c365ea7f8} 
+\mbox{\hyperlink{class_vector}{Vector}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_vector}{Vector}} \&v)
+\item 
+\Hypertarget{class_vector_a88ff89d625fadbd66ab2b669103e0c15}\label{class_vector_a88ff89d625fadbd66ab2b669103e0c15} 
+void {\bfseries push\+\_\+back} (const T \&data)
+\item 
+\Hypertarget{class_vector_adcba035109febbe55cba2a25f8483ba6}\label{class_vector_adcba035109febbe55cba2a25f8483ba6} 
+void {\bfseries pop\+\_\+back} ()
+\item 
+\Hypertarget{class_vector_a23aface8493a9ce26fb2537b3a6887e6}\label{class_vector_a23aface8493a9ce26fb2537b3a6887e6} 
+void {\bfseries insert} (const T \&data, int index)
+\item 
+\Hypertarget{class_vector_a289559d5593e3dd1c154ad5959db5735}\label{class_vector_a289559d5593e3dd1c154ad5959db5735} 
+void {\bfseries erase} (int index)
+\item 
+\Hypertarget{class_vector_a32ad98b135472b0ebc5d6cb3ae5d0085}\label{class_vector_a32ad98b135472b0ebc5d6cb3ae5d0085} 
+void {\bfseries clear} ()
+\item 
+\Hypertarget{class_vector_aac99ecca5bbd15f208bdb3c4480b7349}\label{class_vector_aac99ecca5bbd15f208bdb3c4480b7349} 
+T {\bfseries front} ()
+\item 
+\Hypertarget{class_vector_a196e9eedc9a88a48f64e69e39405fa72}\label{class_vector_a196e9eedc9a88a48f64e69e39405fa72} 
+int {\bfseries size} () const
+\item 
+\Hypertarget{class_vector_ada36811f9a98443820d1ebea0e36a429}\label{class_vector_ada36811f9a98443820d1ebea0e36a429} 
+T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int i)
+\item 
+\Hypertarget{class_vector_ad36c8ee6264c315377664fb3fd2bfcf6}\label{class_vector_ad36c8ee6264c315377664fb3fd2bfcf6} 
+const T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int i) const
+\item 
+\Hypertarget{class_vector_a01f49b667f69c832df2c432d2ee54f37}\label{class_vector_a01f49b667f69c832df2c432d2ee54f37} 
+T \& {\bfseries at} (int i)
+\item 
+\Hypertarget{class_vector_ab373c192cb42f48347457dea4534e802}\label{class_vector_ab373c192cb42f48347457dea4534e802} 
+const T \& {\bfseries at} (int i) const
+\item 
+\Hypertarget{class_vector_abf6e5c48e68cdd8676d93edf0b3a6b23}\label{class_vector_abf6e5c48e68cdd8676d93edf0b3a6b23} 
+\mbox{\hyperlink{class_vector_1_1_iterator}{Iterator}} {\bfseries begin} ()
+\item 
+\Hypertarget{class_vector_a2b08379424ea4ac80fee9166ab720a30}\label{class_vector_a2b08379424ea4ac80fee9166ab720a30} 
+\mbox{\hyperlink{class_vector_1_1_iterator}{Iterator}} {\bfseries begin} () const
+\item 
+\Hypertarget{class_vector_a4ff82de4613402642bea563ae35e4e7e}\label{class_vector_a4ff82de4613402642bea563ae35e4e7e} 
+\mbox{\hyperlink{class_vector_1_1_iterator}{Iterator}} {\bfseries end} ()
+\item 
+\Hypertarget{class_vector_a3c8339cf0688c409c843afd6577b66fb}\label{class_vector_a3c8339cf0688c409c843afd6577b66fb} 
+\mbox{\hyperlink{class_vector_1_1_iterator}{Iterator}} {\bfseries end} () const
+\item 
+\Hypertarget{class_vector_ae1bd4b07ce2db6ce397207b2f0a05adc}\label{class_vector_ae1bd4b07ce2db6ce397207b2f0a05adc} 
+\mbox{\hyperlink{class_vector_1_1_iterator}{Iterator}} {\bfseries rbegin} ()
+\item 
+\Hypertarget{class_vector_a120ff92027d68ba97d9aa218d35c665c}\label{class_vector_a120ff92027d68ba97d9aa218d35c665c} 
+\mbox{\hyperlink{class_vector_1_1_iterator}{Iterator}} {\bfseries rend} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Vector$<$ T $>$}
+Шаблонный класс динамической коллекции на основе динамического массива. 
+
+Создать шаблонный класс динамической коллекции (связный список, очередь динамический массив). Обязательными пунктами задания являются следующие возможности коллекции\+:
+\begin{DoxyItemize}
+\item размещение в себе элементов произвольного типа;
+\item добавление и удаление элементов;
+\item предоставление доступа к элементам массива;
+\item возможность работы с колеекцией через range based for, std\+::size;
+\item корректная передача по параметру в функции. Дополнительные возможности\+: работа независимо с хранением данных и с выделением памяти; возможность удаления и вставки новых элементов в произвольные места коллекции. 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Vector.\+h\end{DoxyCompactItemize}

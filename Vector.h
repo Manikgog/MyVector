@@ -3,7 +3,7 @@
 
 Создать шаблонный класс динамической коллекции (связный список, очередь динамический
 массив).
-Обязятельными пунктами задания являются следующие возможности коллекции:
+Обязательными пунктами задания являются следующие возможности коллекции:
 - размещение в себе элементов произвольного типа;
 - добавление и удаление элементов;
 - предоставление доступа к элементам массива;
@@ -143,19 +143,35 @@ public:
 		this->_array = newArray;
 	}
 
-	void insert(const T& data, int position)
+	void insert(const T& data, int index)
 	{
 		this->_size++;
 		T* newArray = new T[this->_size]{};
-		for (size_t i = 0; i < position; ++i)
+		for (size_t i = 0; i < index; ++i)
 		{
 			newArray[i] = this->_array[i];
 		}
-		newArray[position] = data;
-		for (size_t i = position; i < this->_size - 1; ++i)
+		newArray[index] = data;
+		for (size_t i = index; i < this->_size - 1; ++i)
 		{
 			newArray[i + 1] = this->_array[i];
 		}
+		delete[] this->_array;
+		this->_array = newArray;
+	}
+
+	void erase(int index)
+	{
+		T* newArray = new T[this->_size - 1]{};
+		for (size_t i = 0; i < index; ++i)
+		{
+			newArray[i] = this->_array[i];
+		}
+		for (size_t i = index + 1; i < this->_size; ++i)
+		{
+			newArray[i - 1] = this->_array[i];
+		}
+		this->_size--;
 		delete[] this->_array;
 		this->_array = newArray;
 	}
