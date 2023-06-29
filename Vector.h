@@ -245,10 +245,25 @@ public:
 		return Iterator(_array - 1);
 	}
 
+	void swap(Vector& v)
+	{
+		if (this->_size != v._size)
+			return;
+		else
+		{
+			for (size_t i = 0; i < this->_size; i++)
+			{
+				std::swap(this->_array[i], v._array[i]);
+			}
+		}
+		return;
+	}
+
 
 private:
 	T* _array;
 	int _size;
 };
+
 
 #endif

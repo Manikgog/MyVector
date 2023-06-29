@@ -209,6 +209,29 @@ void TestCopyConstructor()
 	}
 }
 
+void Test_swap()
+{
+	Vector<int> v1;
+	Vector<int> v2;
+	for (size_t i = 0; i < 10; i++)
+	{
+		v1.push_back(i + 1);
+	}
+	for (size_t i = 0; i < 10; i++)
+	{
+		v2.push_back(i + 10);
+	}
+	v1.swap(v2);
+	for (size_t i = 0; i < 10; i++)
+	{
+		assert(v1[i] == (i + 10));
+	}
+	for (size_t i = 0; i < 10; i++)
+	{
+		assert(v2[i] == (i + 1));
+	}
+}
+
 void Test()
 {
 	TestPushBack();
@@ -222,9 +245,8 @@ void Test()
 	Test_erase();
 	TestOperatorEqual();
 	TestCopyConstructor();
+	Test_swap();
 }
-
-
 
 
 template <typename T>
@@ -246,6 +268,6 @@ int main() {
 	SetConsoleCP(1251); 
 	Test();
 	
-		
+	
 	return 0;
 }
