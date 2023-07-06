@@ -97,6 +97,18 @@ public:
 		}
 	}
 
+	Vector(int size) : _array(new T[size]), _size(size) {}
+
+	Vector(const std::initializer_list<T>& list) : Vector(list.size())
+	{
+		int i = 0;
+		for (auto& el : list)
+		{
+			this->_array[i] = el;
+			i++;
+		}
+	}
+
 	~Vector()
 	{
 		this->clear();

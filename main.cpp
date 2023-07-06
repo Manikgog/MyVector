@@ -267,7 +267,7 @@ int main() {
 	setlocale(LC_ALL, "Russian");
 	SetConsoleCP(1251); 
 	Test();
-	
-	
+	Vector<double> v1{ 1.2, 3.4 };
+	printVector(v1);
 	return 0;
 }
