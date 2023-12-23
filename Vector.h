@@ -85,7 +85,7 @@ public:
 	private:
 		T* data_;
 	};
-	///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
 
 	Vector() : _array(nullptr), _size(0) {}
 
@@ -97,7 +97,14 @@ public:
 		}
 	}
 
-	Vector(int size) : _array(new T[size]), _size(size) {}
+	Vector(Vector&& v) {
+		_array = nullptr;
+		_size = 0;
+		std::swap(_array, v._array);
+		std::swap(_size, v._size);
+	}
+
+	explicit Vector(int size) : _array(new T[size]), _size(size) {}
 
 	Vector(const std::initializer_list<T>& list) : Vector(list.size())
 	{
@@ -193,8 +200,11 @@ public:
 
 	void clear()
 	{
-		delete[] _array;
-		_array = nullptr;
+		if (_array) {
+			delete[] _array;
+			_array = nullptr;
+		}
+		size = 0;
 	}
 
 	T front()
