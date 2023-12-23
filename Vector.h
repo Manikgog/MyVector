@@ -98,10 +98,10 @@ public:
 	}
 
 	Vector(Vector&& v) {
-		_array = nullptr;
+		this->_array = nullptr;
 		_size = 0;
-		std::swap(_array, v._array);
-		std::swap(_size, v._size);
+		std::swap(this->_array, v._array);
+		std::swap(this->_size, v._size);
 	}
 
 	explicit Vector(int size) : _array(new T[size]), _size(size) {}
@@ -229,11 +229,17 @@ public:
 
 	T& at(int i) 
 	{
+		if (i < 0 || i >= _size) {
+			throw 1;
+		}
 		return _array[i];
 	}
 
 	const T& at(int i) const
 	{
+		if (i < 0 || i >= _size) {
+			throw 1;
+		}
 		return _array[i];
 	}
 
